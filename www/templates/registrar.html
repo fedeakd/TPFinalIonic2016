@@ -1,0 +1,37 @@
+<ion-view title="Registrar" id="page10">
+<ion-content padding="true" style="background: url(img/GYaTasbRB6vEAUVDXsQC_registrar.jpg) no-repeat center;background-size:cover;" class="has-header">
+<form  name="myForm" id="registrar-form3" class="list">
+    <h1 id="registrar-heading2" style="color:#45A7B9;text-align:center;">Registrate!!</h1>
+    <span class="alerta" ng-show="myForm.clave.$viewValue!=myForm.reClave.$viewValue && !myForm.clave.$invalid"  >Las contraseña no son iguales <br></span>
+    <span class="alerta" ng-show="myForm.clave.$invalid && show">La contraseña es necesaria! <br></span>
+    <span class="alerta" ng-show="myForm.reClave.$invalid && show" >La contraseña es necesaria! <br></span>  
+    <span class="alerta" ng-show="myForm.mail.$error.email">No es un mail valido <br></span> 
+    <span class="alerta" ng-show="myForm.mail.$invalid && show && !myForm.mail.$error.email">El mail es requerido <br></span>
+    <label class="item item-input" id="registrar-input6" style="background-color: green;">
+        <span class="input-label">Mail:</span>
+        <input type="email" name="mail" ng-model="persona.mail"  required placeholder="">
+    </label>
+    <label class="item item-input" id="registrar-input7" style="background-color: green;">
+        <span class="input-label">contraseña</span>
+        <input type="password" name="clave" ng-model="persona.clave"  required placeholder="">
+    </label>
+    <label class="item item-input" id="registrar-input9" style="background-color: green;">
+        <span class="input-label">re contraseña</span>
+        <input type="password" name="reClave" ng-model="persona.reClave"  required placeholder="">
+    </label>
+    <button id="registrar-button4"  style="font-size:22px;border-radius:2222222223px 2222222223px 2222222223px 2222222223px;" class="button button-royal  button-block button-outline"   ng-click="show= myForm.$invalid ? true : false ; show ? true: Registrar() ">Registrar</button>
+</form>
+
+
+<div class="button-bar">
+
+    <a class="button" ng-click="ConectarseConTwitter()" style="background-color:white"><i  style="color:#1da1f2"  class="icon ion-social-twitter"></i></a>
+  <a class="button" ng-click="ConectarseConFacebook()"  style="background-color:#3b5998"><i  style="color:white" class="icon ion-social-facebook"></i></a>
+  <a class="button" ng-click="ConectarseConGitHub() " style="background-color:black"><i class="icon ion-social-github"  style="color:white"></i></a>
+  <a class="button" ng-click="ConectarseConGoogle()" style="background-color:white"><i  style="color:#3079ed" class="icon ion-social-google"></i></a>
+
+</div>
+
+<button id="registrar-button5" style="border-radius:2221px 2221px 2221px 2221px;" class="button button-positive  button-block button-clear" ng-click="IrAlLogin()">Volver</button>
+</ion-content>
+</ion-view>
